@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Petal Dome</title>
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="KinRu Creations" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        color: #5a5a5a;
+        background: #faf8f7;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        text-align: center;
+        padding: 80px 20px 60px;
+        background: #f5e6eb;
+    }
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 4em;
+        font-weight: 600;
+        color: #a37183;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+        color: #b88a9a;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        text-align: center;
+        background: #faf8f7;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.25em;
+        line-height: 1.8;
+        color: #6b6b6b;
+        font-weight: 300;
+    }
+
+    .hero-content p {
+        margin-bottom: 30px;
+    }
+
+    .hero-media {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .hero-media img {
+        max-width: 360px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .decorative-line {
+        width: 80px;
+        height: 1px;
+        background: #b8ae9f;
+        margin: 40px auto;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        background: #faf8f7;
+    }
+
+    .feature {
+        text-align: center;
+        padding: 40px 30px;
+        background: #ffffff;
+        border-radius: 2px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-icon {
+        margin-bottom: 25px;
+    }
+
+    .feature-icon .material-icons {
+        font-size: 48px;
+        color: #c9a0ad;
+    }
+
+    .feature-image {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .feature h3 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8em;
+        color: #a37183;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    .feature h4 {
+        font-size: 0.9em;
+        color: #b88a9a;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    .feature p {
+        color: #9d8a92;
+        line-height: 1.7;
+        font-weight: 300;
+    }
+
+    .gallery {
+        padding: 80px 20px;
+        text-align: center;
+        background: #f5f3f2;
+    }
+
+    .gallery h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3em;
+        color: #a37183;
+        margin-bottom: 50px;
+        font-weight: 600;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .contact {
+        background: #a37183;
+        color: #faf8f7;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .contact h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3em;
+        margin-bottom: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    .contact-subtitle {
+        font-size: 1.1em;
+        margin-bottom: 50px;
+        opacity: 0.9;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .contact-icon .material-icons {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #d4b8c1;
+    }
+
+    .contact-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        font-weight: 300;
+    }
+
+    .contact-value {
+        font-size: 1.2em;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+    .contact-value a {
+        color: #faf8f7;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .contact-value a:hover {
+        opacity: 0.7;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        background: #f5e6eb;
+        color: #b88a9a;
+        font-size: 0.9em;
+        font-weight: 300;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5em;
+        }
+
+        .hero-content {
+            font-size: 1.1em;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+        }
+
+        .gallery h2 {
+            font-size: 2em;
+        }
+
+        .contact-info {
+            gap: 50px;
+        }
+
+        .hero-media {
+            flex-direction: column;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+        }
+
+        .feature h4 {
+            font-size: 0.85em;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Petal Dome</h1>
+            <p class="subtitle">Eternal Blooms for Timeless Moments</p>
+        </div>
+    </header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <p>Bring the magic of every moment to life with our luxury petal domes – a captivating fusion of elegance, personalization, and seasonal charm.</p>
+            
+            <div class="decorative-line"></div>
+            
+            <div class="hero-media">
+                <p>Whether you're hosting a cozy holiday gathering or planning a grand celebration, our handcrafted balloon bouquets and décor will instantly elevate your space.</p>
+                <img src="/images/ThanksGiving.jpeg" alt="Luxury petal dome">
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<div class="features">
+    <div class="feature">
+        <img src="images/elegant-design-placeholder.jpg" alt="Elegant petal dome design" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="feature-icon" style="display:none;">
+            <span class="material-icons">auto_awesome</span>
+        </div>
+        <h3>Elegant Design</h3>
+        <h4>Artfully Crafted Luxury</h4>
+        <p>Each petal dome is a masterpiece where premium fresh flowers meet artistic balloon design. Our signature cascading arrangements feature hand-selected blooms in harmonious color palettes, creating a stunning focal point that transforms any space into an elegant celebration.</p>
+    </div>
+    <div class="feature">
+        <img src="images/personalized-touch-placeholder.jpg" alt="Personalized petal dome" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="feature-icon" style="display:none;">
+            <span class="material-icons">palette</span>
+        </div>
+        <h3>Personalized Touch</h3>
+        <h4>Your Story, Beautifully Told</h4>
+        <p>From custom color schemes matching your event theme to personalized messages nestled among the blooms, every dome tells your unique story. Choose your favorite flowers, add meaningful touches, and create a one-of-a-kind centerpiece that shows your loved ones how truly special they are.</p>
+    </div>
+    <div class="feature">
+        <img src="images/seasonal-charm-placeholder.jpg" alt="Seasonal petal dome arrangements" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="feature-icon" style="display:none;">
+            <span class="material-icons">spa</span>
+        </div>
+        <h3>Seasonal Charm</h3>
+        <h4>Celebrating Every Season</h4>
+        <p>From spring pastels to autumn warmth, holiday magic to summer vibrancy, our seasonal collections capture the essence of each moment. Fresh designs rotate throughout the year, ensuring your celebration reflects the beauty of the current season with blooms at their peak.</p>
+    </div>
+</div>
+
+<section class="gallery">
+    <div class="container">
+        <h2>Our Creations</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery-1.jpg" alt="Petal dome creation 1" onerror="this.src='images/ThanksGiving.jpeg'">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-2.jpg" alt="Petal dome creation 2" onerror="this.src='images/ThanksGiving.jpeg'">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-3.jpg" alt="Petal dome creation 3" onerror="this.src='images/ThanksGiving.jpeg'">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-4.jpg" alt="Petal dome creation 4" onerror="this.src='images/ThanksGiving.jpeg'">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-5.jpg" alt="Petal dome creation 5" onerror="this.src='images/ThanksGiving.jpeg'">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-6.jpg" alt="Petal dome creation 6" onerror="this.src='images/ThanksGiving.jpeg'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <h2>Let's Connect</h2>
+        <p class="contact-subtitle">For more information about our luxury petal domes</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <span class="material-icons">phone</span>
+                </div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">
+                    <a href="tel:3474703888">(347)-470-3888</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <span class="material-icons">email</span>
+                </div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                    <a href="mailto:KinRuCreations@gmail.com">KinRuCreations@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Petal Dome. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

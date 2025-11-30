@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petal Dome - Layout Options Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #a37183;
+            margin-bottom: 40px;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .option-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .option-card h2 {
+            color: #a37183;
+            margin-bottom: 15px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        .badge.recommended {
+            background: #4CAF50;
+            color: white;
+        }
+        .badge.best {
+            background: #2196F3;
+            color: white;
+        }
+        .badge.advanced {
+            background: #FF9800;
+            color: white;
+        }
+        .layout-preview {
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+        .layout-section {
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #ccc;
+            padding-left: 15px;
+        }
+        .layout-section.hero { border-color: #a37183; }
+        .layout-section.gallery { border-color: #4CAF50; background: #f0f8f0; }
+        .layout-section.features { border-color: #2196F3; }
+        .pros-cons {
+            margin-top: 20px;
+        }
+        .pros, .cons {
+            margin: 10px 0;
+        }
+        .pros h4 { color: #4CAF50; }
+        .cons h4 { color: #f44336; }
+        ul {
+            margin-left: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #a37183;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .cta-button:hover {
+            background: #8d5f6f;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌸 Petal Dome Website - Layout Options</h1>
+
+    <div class="options-grid">
+        <!-- OPTION 1 -->
+        <div class="option-card">
+            <span class="badge recommended">✅ RECOMMENDED START</span>
+            <h2>Option 1: Gallery First</h2>
+            <p><strong>Quick Win - Move Gallery Up</strong></p>
+
+            <div class="layout-preview">
+                <div class="layout-section hero">📸 Hero (1 image)</div>
+                <div class="layout-section gallery">🖼️ <strong>GALLERY (9 images)</strong> ← MOVED UP</div>
+                <div class="layout-section features">📋 Features (3 sections)</div>
+                <div class="layout-section">📞 Contact</div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Customers see work immediately</li>
+                        <li>Simple to implement</li>
+                        <li>Easy to maintain</li>
+                        <li>Works with current images</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Still requires one scroll</li>
+                        <li>Hero stays static</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Time to see work:</strong> 1 scroll</p>
+            <p><strong>Complexity:</strong> ⭐ Easy</p>
+        </div>
+
+        <!-- OPTION 2 -->
+        <div class="option-card">
+            <span class="badge best">🏆 BEST OVERALL</span>
+            <h2>Option 2: Carousel + Gallery</h2>
+            <p><strong>Modern, Professional Look</strong></p>
+
+            <div class="layout-preview">
+                <div class="layout-section hero">🎠 <strong>Hero Carousel (3-4 rotating images)</strong></div>
+                <div class="layout-section gallery">🖼️ <strong>GALLERY (9 images)</strong></div>
+                <div class="layout-section features">📋 Features (3 sections)</div>
+                <div class="layout-section">📞 Contact</div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Work visible instantly (carousel)</li>
+                        <li>Professional appearance</li>
+                        <li>Shows variety immediately</li>
+                        <li>Modern, engaging</li>
+                        <li>Best user experience</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Slightly more complex code</li>
+                        <li>Need 3-4 hero-quality images</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Time to see work:</strong> Instant (hero)</p>
+            <p><strong>Complexity:</strong> ⭐⭐ Medium</p>
+        </div>
+
+        <!-- OPTION 3 -->
+        <div class="option-card">
+            <span class="badge advanced">🎨 BLOOM & SONG STYLE</span>
+            <h2>Option 3: Full Visual Impact</h2>
+            <p><strong>Portfolio-Style Layout</strong></p>
+
+            <div class="layout-preview">
+                <div class="layout-section hero">🎠 <strong>Hero Carousel (5 full-width images)</strong></div>
+                <div class="layout-section gallery">🖼️ <strong>LARGE PRODUCT GRID (8 images, 400x400px)</strong></div>
+                <div class="layout-section features">📋 Features (minimal text)</div>
+                <div class="layout-section">📞 Contact</div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Maximum visual impact</li>
+                        <li>Bloom & Song inspired</li>
+                        <li>Professional portfolio feel</li>
+                        <li>Image-first strategy</li>
+                        <li>Great for Instagram-style branding</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Needs 10-15 high-quality images</li>
+                        <li>More complex to maintain</li>
+                        <li>Requires image prep/editing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Time to see work:</strong> Instant (hero)</p>
+            <p><strong>Complexity:</strong> ⭐⭐⭐ Advanced</p>
+        </div>
+    </div>
+
+    <div style="background: white; padding: 40px; border-radius: 10px; text-align: center;">
+        <h2>📊 Quick Decision Guide</h2>
+        <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+            <tr style="background: #a37183; color: white;">
+                <th style="padding: 15px; text-align: left;">Your Situation</th>
+                <th style="padding: 15px;">Recommended Option</th>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">Need quick improvement NOW</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Option 1</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">Want best overall experience</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Option 2 🏆</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">Have 10+ great photos ready</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Option 3</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">Want to match Bloom & Song style</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd; font-weight: bold;">Option 3</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px;">Limited time/images right now</td>
+                <td style="padding: 15px; font-weight: bold;">Start with Option 2, upgrade to 3 later</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 40px; padding: 30px; background: #e8f5e9; border-radius: 10px; border-left: 5px solid #4CAF50;">
+        <h3>💡 My Professional Recommendation</h3>
+        <p style="font-size: 1.1em; line-height: 1.8;">
+            <strong>Start with Option 2 (Carousel + Gallery)</strong> because it gives you:
+        </p>
+        <ul style="font-size: 1.05em; line-height: 1.8;">
+            <li>Immediate visual impact without needing 15 perfect photos</li>
+            <li>Professional, modern appearance</li>
+            <li>Can work with just 6-7 good images (3-4 for carousel, repeat some in gallery)</li>
+            <li>Easy to upgrade to Option 3 when you have more photos</li>
+            <li>Best balance of impact vs. effort</li>
+        </ul>
+        <p style="margin-top: 20px; font-style: italic;">
+            Then, once you have 10-15 portfolio-quality images, upgrade to Option 3 for the full Bloom & Song experience.
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <p style="font-size: 0.9em; color: #666;">
+            All files are ready in your c:\kinrucreations\ folder<br>
+            Just tell me which option you prefer and I'll implement it!
+        </p>
+    </div>
+</body>
+</html>
