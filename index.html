@@ -75,29 +75,6 @@
         background: #000;
     }
 
-    .hero-carousel {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    .hero-slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
-
-    .hero-slide.active {
-        opacity: 1;
-    }
-
-    .hero-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     .hero-overlay {
         position: absolute;
@@ -124,28 +101,6 @@
         color: rgba(255,255,255,0.95);
     }
 
-    .carousel-dots {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
-    }
-
-    .carousel-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.5);
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
-    .carousel-dot.active {
-        background: white;
-    }
 
     .sticky-cta {
         position: fixed;
@@ -208,10 +163,10 @@
 
     .features {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        padding: 60px 20px;
-        max-width: 1000px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+        padding: 80px 20px;
+        max-width: 1200px;
         margin: 0 auto;
         background: #faf8f7;
     }
@@ -231,7 +186,7 @@
     }
 
     .feature-icon {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     .feature-icon .material-icons {
@@ -245,7 +200,7 @@
         height: 250px;
         object-fit: cover;
         border-radius: 8px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
@@ -404,7 +359,9 @@
         }
 
         .features {
+            grid-template-columns: 1fr;
             padding: 60px 20px;
+            gap: 40px;
         }
 
         .sticky-cta {
@@ -442,29 +399,10 @@
     </header>
 
 <section class="hero">
-    <div class="hero-carousel">
-        <div class="hero-slide active">
-            <img src="images/ThanksGiving.jpeg" alt="Thanksgiving petal dome">
-        </div>
-        <div class="hero-slide">
-            <img src="images/WhiteChristmas.jpeg" alt="White Christmas petal dome" onerror="this.src='images/ThanksGiving.jpeg'">
-        </div>
-        <div class="hero-slide">
-            <img src="images/RedChristmas.jpeg" alt="Red Christmas petal dome" onerror="this.src='images/ThanksGiving.jpeg'">
-        </div>
-        <div class="hero-slide">
-            <img src="images/HappyBirthday.jpeg" alt="Happy Birthday petal dome" onerror="this.src='images/ThanksGiving.jpeg'">
-        </div>
-    </div>
+    <img src="images/ThanksGiving.jpeg" alt="Petal dome centerpiece" style="width: 100%; height: 100%; object-fit: cover;">
     <div class="hero-overlay">
         <h2>Eternal Blooms for Timeless Moments</h2>
         <p>Handcrafted luxury petal domes that transform celebrations into unforgettable experiences</p>
-    </div>
-    <div class="carousel-dots">
-        <span class="carousel-dot active" data-slide="0"></span>
-        <span class="carousel-dot" data-slide="1"></span>
-        <span class="carousel-dot" data-slide="2"></span>
-        <span class="carousel-dot" data-slide="3"></span>
     </div>
 </section>
 
@@ -503,27 +441,28 @@
         <div class="feature-icon" style="display:none;">
             <span class="material-icons">auto_awesome</span>
         </div>
-        <h3>Elegant Design</h3>
+        <h3>Elegant Designs with Personalized Touch</h3>
         <h4>Artfully Crafted Luxury</h4>
-        <p>Premium decorative flowers meet artistic balloon design in stunning arrangements that transform any celebration.</p>
-    </div>
-    <div class="feature">
-        <img src="images/personalized-touch-placeholder.jpg" alt="Personalized petal dome" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="feature-icon" style="display:none;">
-            <span class="material-icons">palette</span>
-        </div>
-        <h3>Personalized Touch</h3>
-        <h4>Your Story, Beautifully Told</h4>
-        <p>Custom colors, personalized messages, and unique touches create one-of-a-kind centerpieces for your special moments.</p>
+        <p>Premium decorative flowers meet artistic balloon design in stunning arrangements that transform any celebration. Custom colors, personalized messages, and unique touches create one-of-a-kind centerpieces for your special moments.</p>
     </div>
     <div class="feature">
         <img src="images/seasonal-charm-placeholder.jpg" alt="Seasonal petal dome arrangements" class="feature-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <div class="feature-icon" style="display:none;">
             <span class="material-icons">spa</span>
         </div>
-        <h3>Seasonal Charm</h3>
-        <h4>Celebrating Every Season</h4>
-        <p>Seasonal designs capture the essence of each moment beautifully.</p>
+        <h3>For Every Occasion</h3>
+        <p>We create custom arrangements for:</p>
+        <ul style="text-align: left; max-width: 300px; margin: 0 auto; color: #9d8a92; line-height: 2;">
+            <li>Holidays</li>
+            <li>Valentine's Day</li>
+            <li>Baby Showers</li>
+            <li>Birthdays and Anniversaries</li>
+            <li>Graduations</li>
+            <li>Get Well Soon</li>
+            <li>Mother's Day & Father's Day</li>
+            <li>Retirement Celebrations</li>
+            <li>House Warming</li>
+        </ul>
     </div>
 </div>
 
@@ -551,39 +490,6 @@
     </a>
 </div>
 
-<script>
-// Hero Carousel
-let currentSlide = 0;
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.carousel-dot');
-const totalSlides = slides.length;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        dots[i].classList.remove('active');
-    });
-
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-}
-
-// Auto-advance carousel every 4 seconds
-setInterval(nextSlide, 4000);
-
-// Dot navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-    });
-});
-</script>
 
 </body>
 </html>
