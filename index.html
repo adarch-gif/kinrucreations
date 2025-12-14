@@ -335,6 +335,52 @@
         opacity: 0.9;
     }
 
+    .video-section {
+        padding: 80px 20px;
+        background: #fff;
+        text-align: center;
+    }
+
+    .video-section h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3.5em;
+        color: #a37183;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .video-section-subtitle {
+        font-size: 1.1em;
+        color: #9d8a92;
+        margin-bottom: 60px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .video-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+        background: #000;
+    }
+
+    .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
     footer {
         text-align: center;
         padding: 30px 20px;
@@ -377,6 +423,15 @@
 
         .gallery-item img {
             height: 350px;
+        }
+
+        .video-section h2 {
+            font-size: 2.5em;
+        }
+
+        .video-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
         .feature h3 {
@@ -432,6 +487,27 @@
     <div class="hero-overlay">
         <p>Handcrafted luxury petal domes that transform celebrations into unforgettable experiences</p>
         <a href="tel:3474703888" class="hero-cta">Order Your Custom Dome</a>
+    </div>
+</section>
+
+<section class="video-section">
+    <div class="container">
+        <h2>See Our Creations in Motion</h2>
+        <p class="video-section-subtitle">Watch how our elegant petal domes bring magic to every celebration</p>
+        <div class="video-grid">
+            <div class="video-container">
+                <video controls loop muted playsinline>
+                    <source src="videos/marketing_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls loop muted playsinline>
+                    <source src="videos/marketing_video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
     </div>
 </section>
 
