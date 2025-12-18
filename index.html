@@ -362,7 +362,7 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 40px;
-        max-width: 700px;
+        max-width: 500px;
         margin: 0 auto;
     }
 
@@ -373,13 +373,15 @@
         box-shadow: 0 6px 30px rgba(0,0,0,0.12);
         background: #000;
         max-width: 100%;
+        aspect-ratio: 16 / 9;
     }
 
     .video-container video {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
         border-radius: 12px;
+        object-fit: contain;
     }
 
     footer {
@@ -497,7 +499,7 @@
         <p class="video-section-subtitle">Watch how our elegant petal domes bring magic to every celebration</p>
         <div class="video-grid">
             <div class="video-container">
-                <video controls loop muted playsinline>
+                <video controls loop muted playsinline preload="auto">
                     <source src="videos/marketing_video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
