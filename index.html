@@ -483,13 +483,181 @@
         </div>
     </header>
 
-<section class="hero">
-    <img src="images/ThanksGiving.jpeg" alt="Petal dome centerpiece" style="width: 100%; height: 100%; object-fit: cover;">
+<section class="hero" id="hero-section">
+    <img id="hero-image" src="images/ThanksGiving.jpeg" alt="Petal dome centerpiece" style="width: 100%; height: 100%; object-fit: cover;">
     <div class="hero-overlay">
-        <p>Handcrafted luxury petal domes that transform celebrations into unforgettable experiences</p>
+        <p id="hero-message">Handcrafted luxury petal domes that transform celebrations into unforgettable experiences</p>
         <a href="tel:3474703888" class="hero-cta">Order Your Custom Dome</a>
     </div>
 </section>
+
+<script>
+// Event-Based Image Display System
+(function() {
+    // Define all events with their dates and associated images
+    const events = [
+        {
+            name: "Valentine's Day",
+            month: 2,  // February (0-indexed: January = 0, February = 1, etc.)
+            day: 14,
+            image: "images/Valentine Day.jpeg",
+            message: "Celebrate love with romantic petal dome arrangements",
+            daysBefore: 21  // Show 3 weeks before the event
+        },
+        {
+            name: "Easter",
+            month: 4,  // April (varies, using typical April date)
+            day: 20,
+            image: "images/Happy Birthday.png",  // Fallback until Easter image is added
+            message: "Spring celebrations with elegant petal domes",
+            daysBefore: 14
+        },
+        {
+            name: "Mother's Day",
+            month: 5,  // May
+            day: 11,
+            image: "images/Gallery1.jpg",
+            message: "Honor Mom with beautiful petal dome arrangements",
+            daysBefore: 14
+        },
+        {
+            name: "Birthday",
+            month: 0,  // Generic - always available
+            day: 0,
+            image: "images/Happy Birthday.png",
+            message: "Make birthdays unforgettable with custom petal domes",
+            daysBefore: 365
+        },
+        {
+            name: "Anniversary",
+            month: 0,  // Generic
+            day: 0,
+            image: "images/Anniversary.jpg",
+            message: "Celebrate your love story with elegant centerpieces",
+            daysBefore: 365
+        },
+        {
+            name: "Thanksgiving",
+            month: 11,  // November
+            day: 28,  // Typically fourth Thursday, using approximate date
+            image: "images/ThanksGiving.jpeg",
+            message: "Celebrate gratitude with autumn elegance",
+            daysBefore: 21
+        },
+        {
+            name: "Christmas",
+            month: 12,  // December
+            day: 25,
+            image: "images/MerryChristmas.jpg",
+            message: "Make your holidays magical with festive petal domes",
+            daysBefore: 30
+        },
+        {
+            name: "New Year",
+            month: 1,  // January
+            day: 1,
+            image: "images/welcome-2026.jpeg",
+            message: "Welcome the new year with elegant celebrations",
+            daysBefore: 14
+        },
+        {
+            name: "Gender Reveal",
+            month: 0,  // Generic
+            day: 0,
+            image: "images/GenderReveal-Golden.jpeg",
+            message: "Celebrate new beginnings with personalized petal domes",
+            daysBefore: 365
+        }
+    ];
+
+    // Function to calculate days until an event
+    function daysUntilEvent(eventMonth, eventDay) {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+
+        // Create event date for current year
+        let eventDate = new Date(currentYear, eventMonth - 1, eventDay);
+
+        // If event has passed this year, use next year
+        if (eventDate < today) {
+            eventDate = new Date(currentYear + 1, eventMonth - 1, eventDay);
+        }
+
+        // Calculate days difference
+        const timeDiff = eventDate - today;
+        const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+        return daysDiff;
+    }
+
+    // Function to find the most relevant upcoming event
+    function getUpcomingEvent() {
+        const today = new Date();
+        let closestEvent = null;
+        let closestDays = Infinity;
+
+        events.forEach(event => {
+            // Skip generic events (month = 0) for now
+            if (event.month === 0) return;
+
+            const daysUntil = daysUntilEvent(event.month, event.day);
+
+            // If event is within its display window and closer than current closest
+            if (daysUntil <= event.daysBefore && daysUntil < closestDays) {
+                closestEvent = event;
+                closestDays = daysUntil;
+            }
+        });
+
+        // If no specific event is upcoming, use a generic one
+        if (!closestEvent) {
+            const genericEvents = events.filter(e => e.month === 0);
+            if (genericEvents.length > 0) {
+                closestEvent = genericEvents[Math.floor(Math.random() * genericEvents.length)];
+            }
+        }
+
+        return closestEvent || events[0]; // Fallback to first event if nothing found
+    }
+
+    // Function to update the hero section
+    function updateHeroSection() {
+        const upcomingEvent = getUpcomingEvent();
+
+        const heroImage = document.getElementById('hero-image');
+        const heroMessage = document.getElementById('hero-message');
+
+        if (heroImage && upcomingEvent) {
+            // Update image with fallback handling
+            heroImage.src = upcomingEvent.image;
+            heroImage.alt = `${upcomingEvent.name} petal dome`;
+
+            // Handle image load errors (fallback to Thanksgiving)
+            heroImage.onerror = function() {
+                this.src = 'images/ThanksGiving.jpeg';
+                this.alt = 'Petal dome centerpiece';
+            };
+        }
+
+        if (heroMessage && upcomingEvent) {
+            heroMessage.textContent = upcomingEvent.message;
+        }
+
+        // Log for debugging (can be removed in production)
+        console.log(`Displaying: ${upcomingEvent.name}`);
+    }
+
+    // Run on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateHeroSection);
+    } else {
+        updateHeroSection();
+    }
+
+    // Optionally update daily (if page stays open)
+    setInterval(updateHeroSection, 24 * 60 * 60 * 1000); // 24 hours
+})();
+</script>
 
 <section class="video-section">
     <div class="container">
